@@ -1,0 +1,10 @@
+#!/bin/sh
+
+parse_git_branch() {
+  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
+
+GIT_REPO_DIR=$(git rev-parse --show-toplevel)
+
+curl -H "Content-Type: application/json" -X POST -d \
+  "{\"event_type\":\"git_hooks_post_checkout\",\"attributes\":{\"git_repo_dir)\":\"$GIT_REPO_DIR\"}}" http://localhost:4567/events

@@ -10,6 +10,10 @@ configure do
   set(:vendor) { YAML.load_file('config/config.yml') }
 end
 
+get '/version' do
+  erb :version
+end
+
 post '/events' do
   debugger
   payload = JSON.parse(request.body.read)

@@ -7,14 +7,9 @@ module Github
       @client = Octokit::Client.new access_token: github_access_token
     end
 
-    def process(raw_event)
-      print raw_event
-      print config
-    end
-
-    def current
-      repos = client.org_repos('Bebanjo', type: 'all', per_page: 100)
-      put repos
+    def process(request)
+      issue = client.issue(request['repo'], request['issue_number'])
+      issue.to_attrs.merge!(labels: issue.labels)
     end
 
     private

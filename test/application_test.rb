@@ -13,10 +13,11 @@ class ApplicationTest < Test::Unit::TestCase
   end
 
   def test_hooks
-    data = { owner: 'bebanjo',
-             repo: 'scmbot',
-             branch: '1-my-branch' }
-    post '/hooks', data.to_json, "CONTENT_TYPE" => "application/json"
-    assert last_response.ok?
+    VCR.use_cassette("github") do
+      data = { repo: 'dsaenztagarro/githubbot',
+               issue_number: 1 }
+      post '/hooks', data.to_json, "CONTENT_TYPE" => "application/json"
+      assert last_response.ok?
+    end
   end
 end

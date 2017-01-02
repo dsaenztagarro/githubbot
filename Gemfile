@@ -11,7 +11,12 @@ group :production do
 end
 
 group :test do
-  gem 'rspec'
+  gem 'test-unit'
+  gem 'vcr'
+  gem 'webmock'
+
+  gem "simplecov"
+  gem "codeclimate-test-reporter", "~> 1.0.0"
 end
 
 group :development do

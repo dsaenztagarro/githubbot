@@ -1,0 +1,12 @@
+language: ruby
+rvm:
+- 2.3.0
+- 2.2.0
+- 2.1.0
+before_script:
+  - cp config/config.yml.example config/config.yml
+script:
+  - bundle exec rake test
+addons:
+  code_climate:
+    repo_token: ba44672c68e76230ccbce3ea06722452831bb08a4c999bd7a8965b42dbe293f5

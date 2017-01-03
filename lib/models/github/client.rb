@@ -1,10 +1,13 @@
 require 'octokit'
 
 module Github
-  class Service
+  class Client
+    attr_accessor :config, :client
+
     def initialize(config)
       @config = config
       @client = Octokit::Client.new access_token: github_access_token
+      @client.login
     end
 
     def process(request)
@@ -12,9 +15,15 @@ module Github
       issue.to_attrs.merge!(labels: issue.labels)
     end
 
-    private
+    def issue(*args)
+      client.issue(*args)
+    end
 
-    attr_accessor :config, :client
+    def create_pull_request(repo, base, head, title, body)
+      client.create_pull_request(repo, base, head, title, body)
+    end
+
+    private
 
     def github_access_token
       config["github"]["personal_access_token"]

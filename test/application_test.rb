@@ -1,7 +1,10 @@
 require_relative 'test_helper'
+require_relative 'support/git_repo_helper'
+require 'byebug'
 
-class ApplicationTest < Test::Unit::TestCase
+class ApplicationTest < Minitest::Test
   include Rack::Test::Methods
+  include GitRepoHelper
 
   def app
     Sinatra::Application
@@ -12,12 +15,17 @@ class ApplicationTest < Test::Unit::TestCase
     assert last_response.ok?
   end
 
-  def test_hooks
-    VCR.use_cassette("github") do
-      data = { repo: 'dsaenztagarro/githubbot',
-               issue_number: 1 }
-      post '/hooks', data.to_json, "CONTENT_TYPE" => "application/json"
-      assert last_response.ok?
+  private
+
+  def setup_git_local_project(dir, remote_path)
+    File.join(dir, 'project').tap do |path|
+      Dir.mkdir(path)
+      Dir.chdir(path) do
+        File.create('A.txt') do |file|
+          file.puts("hello world")
+        end
+        system("git remote add origin #{remote_path}")
+      end
     end
   end
 end

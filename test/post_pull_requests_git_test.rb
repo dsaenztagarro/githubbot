@@ -25,7 +25,7 @@ class PostPullRequestsGitTest < Minitest::Test
   end
 
   def teardown
-    FileUtils.remove_entry git_dir
+    FileUtils.remove_entry base_dir
   end
 
   def test_post_pull_requests

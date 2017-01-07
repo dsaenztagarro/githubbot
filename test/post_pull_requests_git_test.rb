@@ -15,13 +15,14 @@ class PostPullRequestsGitTest < Minitest::Test
     path = create_bare_repo
     # Clone repo and push first commit
     Dir.chdir(clone_repo(path)) do
-      File.open('A.txt', 'w') { |file| file.puts("hello world") }
+      File.open('A.txt', 'w') { |file| file.puts('hello world') }
       `git add A.txt`
       `git commit -m 'Initial commit'`
       `git push --set-upstream origin master`
     end
-    # Clone again the repo
-    @repo_url = clone_repo(path)
+    # Clone again the repo with custom directory name to avoid error:
+    # fatal: destination path 'project-xxxxxxxxxx' already exists and is not an empty directory.
+    @repo_url = clone_repo(path, directory: "project-2-#{timestamp}")
   end
 
   def teardown

@@ -12,15 +12,17 @@ module Git
         end
       end
 
-      def clone_repo(repo_path)
+      def clone_repo(repo_path, opts = {})
+        directory = opts[:directory]
+        directory_path = File.join(base_dir, directory) if directory
         Dir.chdir(base_dir) do
-          system("git clone #{repo_path}")
+          system("git clone #{repo_path} #{directory_path}")
         end
-        repo_path.sub('.git','')
+        directory_path || repo_path.sub('.git','')
       end
 
       def timestamp
-        Time.now.to_i
+        DateTime.now.strftime('%Q')
       end
     end
   end

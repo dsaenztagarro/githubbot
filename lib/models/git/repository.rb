@@ -13,8 +13,10 @@ module Git
 
     # @return [Boolean] Marks whether or not are changes pending to be commited
     def nothing_to_commit?
-      command_log, status = run "git status --short"
-      command_log.chomp.empty?
+      Dir.chdir(dir) do
+        command_log, status = run "git status --short"
+        command_log.chomp.empty?
+      end
     end
 
     def url

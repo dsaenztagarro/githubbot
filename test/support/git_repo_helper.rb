@@ -11,7 +11,6 @@ module GitRepoHelper
     end
 
     GitRepo.stub :`, backstick_stub do
-      debugger
       yield
     end
   end

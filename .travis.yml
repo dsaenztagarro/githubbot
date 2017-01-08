@@ -5,6 +5,8 @@ rvm:
 - 2.1.0
 before_script:
   - cp config/config.yml.example config/config.yml
+  - git config --global user.name "Test user"
+  - git config --global user.email test@hostname.com
 script:
   - bundle exec rake test
 addons:

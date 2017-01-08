@@ -1,0 +1,274 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.github.com/user
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.github.v3+json
+      User-Agent:
+      - Octokit Ruby Gem 4.6.2
+      Content-Type:
+      - application/json
+      Authorization:
+      - token 176cc61d643a34ea6d53cade6b6d94a7bf2a93cd
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - GitHub.com
+      Date:
+      - Sat, 07 Jan 2017 14:54:11 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Status:
+      - 200 OK
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4996'
+      X-Ratelimit-Reset:
+      - '1483802979'
+      Cache-Control:
+      - private, max-age=60, s-maxage=60
+      Vary:
+      - Accept, Authorization, Cookie, X-GitHub-OTP
+      - Accept-Encoding
+      Etag:
+      - W/"f2df1464823a0f141a61b56bcc847fe0"
+      Last-Modified:
+      - Fri, 06 Jan 2017 08:16:09 GMT
+      X-Oauth-Scopes:
+      - admin:gpg_key, admin:org, admin:public_key, admin:repo_hook, gist, notifications,
+        repo, user
+      X-Accepted-Oauth-Scopes:
+      - ''
+      X-Github-Media-Type:
+      - github.v3; format=json
+      Access-Control-Expose-Headers:
+      - ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset,
+        X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Security-Policy:
+      - default-src 'none'
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - deny
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Served-By:
+      - e724c57ebb9961c772a91e2dd7421c8d
+      X-Github-Request-Id:
+      - D525799A:6B4F:60D2C9B:58710113
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJsb2dpbiI6ImRzYWVuenRhZ2Fycm8iLCJpZCI6MTY4NTQ4OSwiYXZhdGFy
+        X3VybCI6Imh0dHBzOi8vYXZhdGFycy5naXRodWJ1c2VyY29udGVudC5jb20v
+        dS8xNjg1NDg5P3Y9MyIsImdyYXZhdGFyX2lkIjoiIiwidXJsIjoiaHR0cHM6
+        Ly9hcGkuZ2l0aHViLmNvbS91c2Vycy9kc2Flbnp0YWdhcnJvIiwiaHRtbF91
+        cmwiOiJodHRwczovL2dpdGh1Yi5jb20vZHNhZW56dGFnYXJybyIsImZvbGxv
+        d2Vyc191cmwiOiJodHRwczovL2FwaS5naXRodWIuY29tL3VzZXJzL2RzYWVu
+        enRhZ2Fycm8vZm9sbG93ZXJzIiwiZm9sbG93aW5nX3VybCI6Imh0dHBzOi8v
+        YXBpLmdpdGh1Yi5jb20vdXNlcnMvZHNhZW56dGFnYXJyby9mb2xsb3dpbmd7
+        L290aGVyX3VzZXJ9IiwiZ2lzdHNfdXJsIjoiaHR0cHM6Ly9hcGkuZ2l0aHVi
+        LmNvbS91c2Vycy9kc2Flbnp0YWdhcnJvL2dpc3Rzey9naXN0X2lkfSIsInN0
+        YXJyZWRfdXJsIjoiaHR0cHM6Ly9hcGkuZ2l0aHViLmNvbS91c2Vycy9kc2Fl
+        bnp0YWdhcnJvL3N0YXJyZWR7L293bmVyfXsvcmVwb30iLCJzdWJzY3JpcHRp
+        b25zX3VybCI6Imh0dHBzOi8vYXBpLmdpdGh1Yi5jb20vdXNlcnMvZHNhZW56
+        dGFnYXJyby9zdWJzY3JpcHRpb25zIiwib3JnYW5pemF0aW9uc191cmwiOiJo
+        dHRwczovL2FwaS5naXRodWIuY29tL3VzZXJzL2RzYWVuenRhZ2Fycm8vb3Jn
+        cyIsInJlcG9zX3VybCI6Imh0dHBzOi8vYXBpLmdpdGh1Yi5jb20vdXNlcnMv
+        ZHNhZW56dGFnYXJyby9yZXBvcyIsImV2ZW50c191cmwiOiJodHRwczovL2Fw
+        aS5naXRodWIuY29tL3VzZXJzL2RzYWVuenRhZ2Fycm8vZXZlbnRzey9wcml2
+        YWN5fSIsInJlY2VpdmVkX2V2ZW50c191cmwiOiJodHRwczovL2FwaS5naXRo
+        dWIuY29tL3VzZXJzL2RzYWVuenRhZ2Fycm8vcmVjZWl2ZWRfZXZlbnRzIiwi
+        dHlwZSI6IlVzZXIiLCJzaXRlX2FkbWluIjpmYWxzZSwibmFtZSI6IkRhdmlk
+        IFPDoWVueiIsImNvbXBhbnkiOiJCZUJhbmpvIiwiYmxvZyI6Imh0dHA6Ly9k
+        c2Flbnp0YWdhcnJvLmdpdGh1Yi5pby8iLCJsb2NhdGlvbiI6Ik1hZHJpZCIs
+        ImVtYWlsIjoiZGF2aWQuc2FlbnoudGFnYXJyb0BnbWFpbC5jb20iLCJoaXJl
+        YWJsZSI6dHJ1ZSwiYmlvIjpudWxsLCJwdWJsaWNfcmVwb3MiOjEzNywicHVi
+        bGljX2dpc3RzIjo4LCJmb2xsb3dlcnMiOjE0LCJmb2xsb3dpbmciOjY0LCJj
+        cmVhdGVkX2F0IjoiMjAxMi0wNC0yN1QxNDozNjoyNFoiLCJ1cGRhdGVkX2F0
+        IjoiMjAxNy0wMS0wNlQwODoxNjowOVoiLCJwcml2YXRlX2dpc3RzIjo5LCJ0
+        b3RhbF9wcml2YXRlX3JlcG9zIjo0LCJvd25lZF9wcml2YXRlX3JlcG9zIjo0
+        LCJkaXNrX3VzYWdlIjoyMTk4MDcsImNvbGxhYm9yYXRvcnMiOjAsInBsYW4i
+        OnsibmFtZSI6ImZyZWUiLCJzcGFjZSI6OTc2NTYyNDk5LCJjb2xsYWJvcmF0
+        b3JzIjowLCJwcml2YXRlX3JlcG9zIjowfX0=
+    http_version: 
+  recorded_at: Sat, 07 Jan 2017 14:54:11 GMT
+- request:
+    method: get
+    uri: https://api.github.com/repos/dsaenztagarro/project/issues/1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.github.v3+json
+      User-Agent:
+      - Octokit Ruby Gem 4.6.2
+      Content-Type:
+      - application/json
+      Authorization:
+      - token 176cc61d643a34ea6d53cade6b6d94a7bf2a93cd
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - GitHub.com
+      Date:
+      - Sat, 07 Jan 2017 14:54:12 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Status:
+      - 200 OK
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4995'
+      X-Ratelimit-Reset:
+      - '1483802979'
+      Cache-Control:
+      - private, max-age=60, s-maxage=60
+      Vary:
+      - Accept, Authorization, Cookie, X-GitHub-OTP
+      - Accept-Encoding
+      Etag:
+      - W/"9e7cf21f9abc3aa2128b4dca10cdcbfc"
+      Last-Modified:
+      - Sat, 07 Jan 2017 14:53:34 GMT
+      X-Oauth-Scopes:
+      - admin:gpg_key, admin:org, admin:public_key, admin:repo_hook, gist, notifications,
+        repo, user
+      X-Accepted-Oauth-Scopes:
+      - public_repo, repo
+      X-Github-Media-Type:
+      - github.v3; format=json
+      Access-Control-Expose-Headers:
+      - ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset,
+        X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Security-Policy:
+      - default-src 'none'
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - deny
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Served-By:
+      - 4537b68c46a1b65b106078b0a2578ee2
+      X-Github-Request-Id:
+      - D525799A:6B4B:1AA9DF6:58710113
+    body:
+      encoding: ASCII-8BIT
+      string: '{"url":"https://api.github.com/repos/dsaenztagarro/project/issues/1","repository_url":"https://api.github.com/repos/dsaenztagarro/project","labels_url":"https://api.github.com/repos/dsaenztagarro/project/issues/1/labels{/name}","comments_url":"https://api.github.com/repos/dsaenztagarro/project/issues/1/comments","events_url":"https://api.github.com/repos/dsaenztagarro/project/issues/1/events","html_url":"https://github.com/dsaenztagarro/project/issues/1","id":199365552,"number":1,"title":"Fake
+        issue","user":{"login":"dsaenztagarro","id":1685489,"avatar_url":"https://avatars.githubusercontent.com/u/1685489?v=3","gravatar_id":"","url":"https://api.github.com/users/dsaenztagarro","html_url":"https://github.com/dsaenztagarro","followers_url":"https://api.github.com/users/dsaenztagarro/followers","following_url":"https://api.github.com/users/dsaenztagarro/following{/other_user}","gists_url":"https://api.github.com/users/dsaenztagarro/gists{/gist_id}","starred_url":"https://api.github.com/users/dsaenztagarro/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/dsaenztagarro/subscriptions","organizations_url":"https://api.github.com/users/dsaenztagarro/orgs","repos_url":"https://api.github.com/users/dsaenztagarro/repos","events_url":"https://api.github.com/users/dsaenztagarro/events{/privacy}","received_events_url":"https://api.github.com/users/dsaenztagarro/received_events","type":"User","site_admin":false},"labels":[],"state":"open","locked":false,"assignee":null,"assignees":[],"milestone":null,"comments":0,"created_at":"2017-01-07T14:53:34Z","updated_at":"2017-01-07T14:53:34Z","closed_at":null,"body":"Description
+        of the fake issue","closed_by":null}'
+    http_version: 
+  recorded_at: Sat, 07 Jan 2017 14:54:12 GMT
+- request:
+    method: post
+    uri: https://api.github.com/repos/dsaenztagarro/project/pulls
+    body:
+      encoding: UTF-8
+      string: '{"base":"master","head":"1-fake-issue","title":"Fake issue","body":"This
+        PR implements #1"}'
+    headers:
+      Accept:
+      - application/vnd.github.v3+json
+      User-Agent:
+      - Octokit Ruby Gem 4.6.2
+      Content-Type:
+      - application/json
+      Authorization:
+      - token 176cc61d643a34ea6d53cade6b6d94a7bf2a93cd
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - GitHub.com
+      Date:
+      - Sat, 07 Jan 2017 14:54:15 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '14649'
+      Status:
+      - 201 Created
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4994'
+      X-Ratelimit-Reset:
+      - '1483802979'
+      Cache-Control:
+      - private, max-age=60, s-maxage=60
+      Vary:
+      - Accept, Authorization, Cookie, X-GitHub-OTP
+      - Accept-Encoding
+      Etag:
+      - '"8b8403d5120cf71bdd078cdd7ddb73a1"'
+      X-Oauth-Scopes:
+      - admin:gpg_key, admin:org, admin:public_key, admin:repo_hook, gist, notifications,
+        repo, user
+      X-Accepted-Oauth-Scopes:
+      - ''
+      Location:
+      - https://api.github.com/repos/dsaenztagarro/project/pulls/2
+      X-Github-Media-Type:
+      - github.v3; format=json
+      Access-Control-Expose-Headers:
+      - ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset,
+        X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Security-Policy:
+      - default-src 'none'
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - deny
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Served-By:
+      - e183f7c661b1bbc2c987b3c4dc7b04e0
+      X-Github-Request-Id:
+      - D525799A:6B4F:60D2EC5:58710116
+    body:
+      encoding: UTF-8
+      string: '{"url":"https://api.github.com/repos/dsaenztagarro/project/pulls/2","id":100571282,"html_url":"https://github.com/dsaenztagarro/project/pull/2","diff_url":"https://github.com/dsaenztagarro/project/pull/2.diff","patch_url":"https://github.com/dsaenztagarro/project/pull/2.patch","issue_url":"https://api.github.com/repos/dsaenztagarro/project/issues/2","number":2,"state":"open","locked":false,"title":"Fake
+        issue","user":{"login":"dsaenztagarro","id":1685489,"avatar_url":"https://avatars.githubusercontent.com/u/1685489?v=3","gravatar_id":"","url":"https://api.github.com/users/dsaenztagarro","html_url":"https://github.com/dsaenztagarro","followers_url":"https://api.github.com/users/dsaenztagarro/followers","following_url":"https://api.github.com/users/dsaenztagarro/following{/other_user}","gists_url":"https://api.github.com/users/dsaenztagarro/gists{/gist_id}","starred_url":"https://api.github.com/users/dsaenztagarro/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/dsaenztagarro/subscriptions","organizations_url":"https://api.github.com/users/dsaenztagarro/orgs","repos_url":"https://api.github.com/users/dsaenztagarro/repos","events_url":"https://api.github.com/users/dsaenztagarro/events{/privacy}","received_events_url":"https://api.github.com/users/dsaenztagarro/received_events","type":"User","site_admin":false},"body":"This
+        PR implements #1","created_at":"2017-01-07T14:54:15Z","updated_at":"2017-01-07T14:54:15Z","closed_at":null,"merged_at":null,"merge_commit_sha":null,"assignee":null,"assignees":[],"milestone":null,"commits_url":"https://api.github.com/repos/dsaenztagarro/project/pulls/2/commits","review_comments_url":"https://api.github.com/repos/dsaenztagarro/project/pulls/2/comments","review_comment_url":"https://api.github.com/repos/dsaenztagarro/project/pulls/comments{/number}","comments_url":"https://api.github.com/repos/dsaenztagarro/project/issues/2/comments","statuses_url":"https://api.github.com/repos/dsaenztagarro/project/statuses/7fb381e8d6e3ca9a2e64c5ffca93cbffb3595ebd","head":{"label":"dsaenztagarro:1-fake-issue","ref":"1-fake-issue","sha":"7fb381e8d6e3ca9a2e64c5ffca93cbffb3595ebd","user":{"login":"dsaenztagarro","id":1685489,"avatar_url":"https://avatars.githubusercontent.com/u/1685489?v=3","gravatar_id":"","url":"https://api.github.com/users/dsaenztagarro","html_url":"https://github.com/dsaenztagarro","followers_url":"https://api.github.com/users/dsaenztagarro/followers","following_url":"https://api.github.com/users/dsaenztagarro/following{/other_user}","gists_url":"https://api.github.com/users/dsaenztagarro/gists{/gist_id}","starred_url":"https://api.github.com/users/dsaenztagarro/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/dsaenztagarro/subscriptions","organizations_url":"https://api.github.com/users/dsaenztagarro/orgs","repos_url":"https://api.github.com/users/dsaenztagarro/repos","events_url":"https://api.github.com/users/dsaenztagarro/events{/privacy}","received_events_url":"https://api.github.com/users/dsaenztagarro/received_events","type":"User","site_admin":false},"repo":{"id":78284698,"name":"project","full_name":"dsaenztagarro/project","owner":{"login":"dsaenztagarro","id":1685489,"avatar_url":"https://avatars.githubusercontent.com/u/1685489?v=3","gravatar_id":"","url":"https://api.github.com/users/dsaenztagarro","html_url":"https://github.com/dsaenztagarro","followers_url":"https://api.github.com/users/dsaenztagarro/followers","following_url":"https://api.github.com/users/dsaenztagarro/following{/other_user}","gists_url":"https://api.github.com/users/dsaenztagarro/gists{/gist_id}","starred_url":"https://api.github.com/users/dsaenztagarro/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/dsaenztagarro/subscriptions","organizations_url":"https://api.github.com/users/dsaenztagarro/orgs","repos_url":"https://api.github.com/users/dsaenztagarro/repos","events_url":"https://api.github.com/users/dsaenztagarro/events{/privacy}","received_events_url":"https://api.github.com/users/dsaenztagarro/received_events","type":"User","site_admin":false},"private":false,"html_url":"https://github.com/dsaenztagarro/project","description":null,"fork":false,"url":"https://api.github.com/repos/dsaenztagarro/project","forks_url":"https://api.github.com/repos/dsaenztagarro/project/forks","keys_url":"https://api.github.com/repos/dsaenztagarro/project/keys{/key_id}","collaborators_url":"https://api.github.com/repos/dsaenztagarro/project/collaborators{/collaborator}","teams_url":"https://api.github.com/repos/dsaenztagarro/project/teams","hooks_url":"https://api.github.com/repos/dsaenztagarro/project/hooks","issue_events_url":"https://api.github.com/repos/dsaenztagarro/project/issues/events{/number}","events_url":"https://api.github.com/repos/dsaenztagarro/project/events","assignees_url":"https://api.github.com/repos/dsaenztagarro/project/assignees{/user}","branches_url":"https://api.github.com/repos/dsaenztagarro/project/branches{/branch}","tags_url":"https://api.github.com/repos/dsaenztagarro/project/tags","blobs_url":"https://api.github.com/repos/dsaenztagarro/project/git/blobs{/sha}","git_tags_url":"https://api.github.com/repos/dsaenztagarro/project/git/tags{/sha}","git_refs_url":"https://api.github.com/repos/dsaenztagarro/project/git/refs{/sha}","trees_url":"https://api.github.com/repos/dsaenztagarro/project/git/trees{/sha}","statuses_url":"https://api.github.com/repos/dsaenztagarro/project/statuses/{sha}","languages_url":"https://api.github.com/repos/dsaenztagarro/project/languages","stargazers_url":"https://api.github.com/repos/dsaenztagarro/project/stargazers","contributors_url":"https://api.github.com/repos/dsaenztagarro/project/contributors","subscribers_url":"https://api.github.com/repos/dsaenztagarro/project/subscribers","subscription_url":"https://api.github.com/repos/dsaenztagarro/project/subscription","commits_url":"https://api.github.com/repos/dsaenztagarro/project/commits{/sha}","git_commits_url":"https://api.github.com/repos/dsaenztagarro/project/git/commits{/sha}","comments_url":"https://api.github.com/repos/dsaenztagarro/project/comments{/number}","issue_comment_url":"https://api.github.com/repos/dsaenztagarro/project/issues/comments{/number}","contents_url":"https://api.github.com/repos/dsaenztagarro/project/contents/{+path}","compare_url":"https://api.github.com/repos/dsaenztagarro/project/compare/{base}...{head}","merges_url":"https://api.github.com/repos/dsaenztagarro/project/merges","archive_url":"https://api.github.com/repos/dsaenztagarro/project/{archive_format}{/ref}","downloads_url":"https://api.github.com/repos/dsaenztagarro/project/downloads","issues_url":"https://api.github.com/repos/dsaenztagarro/project/issues{/number}","pulls_url":"https://api.github.com/repos/dsaenztagarro/project/pulls{/number}","milestones_url":"https://api.github.com/repos/dsaenztagarro/project/milestones{/number}","notifications_url":"https://api.github.com/repos/dsaenztagarro/project/notifications{?since,all,participating}","labels_url":"https://api.github.com/repos/dsaenztagarro/project/labels{/name}","releases_url":"https://api.github.com/repos/dsaenztagarro/project/releases{/id}","deployments_url":"https://api.github.com/repos/dsaenztagarro/project/deployments","created_at":"2017-01-07T14:50:44Z","updated_at":"2017-01-07T14:50:44Z","pushed_at":"2017-01-07T14:52:35Z","git_url":"git://github.com/dsaenztagarro/project.git","ssh_url":"git@github.com:dsaenztagarro/project.git","clone_url":"https://github.com/dsaenztagarro/project.git","svn_url":"https://github.com/dsaenztagarro/project","homepage":null,"size":0,"stargazers_count":0,"watchers_count":0,"language":null,"has_issues":true,"has_downloads":true,"has_wiki":true,"has_pages":false,"forks_count":0,"mirror_url":null,"open_issues_count":2,"forks":0,"open_issues":2,"watchers":0,"default_branch":"master"}},"base":{"label":"dsaenztagarro:master","ref":"master","sha":"9375ba75634fbc6a3378a82c441054d63a211bcf","user":{"login":"dsaenztagarro","id":1685489,"avatar_url":"https://avatars.githubusercontent.com/u/1685489?v=3","gravatar_id":"","url":"https://api.github.com/users/dsaenztagarro","html_url":"https://github.com/dsaenztagarro","followers_url":"https://api.github.com/users/dsaenztagarro/followers","following_url":"https://api.github.com/users/dsaenztagarro/following{/other_user}","gists_url":"https://api.github.com/users/dsaenztagarro/gists{/gist_id}","starred_url":"https://api.github.com/users/dsaenztagarro/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/dsaenztagarro/subscriptions","organizations_url":"https://api.github.com/users/dsaenztagarro/orgs","repos_url":"https://api.github.com/users/dsaenztagarro/repos","events_url":"https://api.github.com/users/dsaenztagarro/events{/privacy}","received_events_url":"https://api.github.com/users/dsaenztagarro/received_events","type":"User","site_admin":false},"repo":{"id":78284698,"name":"project","full_name":"dsaenztagarro/project","owner":{"login":"dsaenztagarro","id":1685489,"avatar_url":"https://avatars.githubusercontent.com/u/1685489?v=3","gravatar_id":"","url":"https://api.github.com/users/dsaenztagarro","html_url":"https://github.com/dsaenztagarro","followers_url":"https://api.github.com/users/dsaenztagarro/followers","following_url":"https://api.github.com/users/dsaenztagarro/following{/other_user}","gists_url":"https://api.github.com/users/dsaenztagarro/gists{/gist_id}","starred_url":"https://api.github.com/users/dsaenztagarro/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/dsaenztagarro/subscriptions","organizations_url":"https://api.github.com/users/dsaenztagarro/orgs","repos_url":"https://api.github.com/users/dsaenztagarro/repos","events_url":"https://api.github.com/users/dsaenztagarro/events{/privacy}","received_events_url":"https://api.github.com/users/dsaenztagarro/received_events","type":"User","site_admin":false},"private":false,"html_url":"https://github.com/dsaenztagarro/project","description":null,"fork":false,"url":"https://api.github.com/repos/dsaenztagarro/project","forks_url":"https://api.github.com/repos/dsaenztagarro/project/forks","keys_url":"https://api.github.com/repos/dsaenztagarro/project/keys{/key_id}","collaborators_url":"https://api.github.com/repos/dsaenztagarro/project/collaborators{/collaborator}","teams_url":"https://api.github.com/repos/dsaenztagarro/project/teams","hooks_url":"https://api.github.com/repos/dsaenztagarro/project/hooks","issue_events_url":"https://api.github.com/repos/dsaenztagarro/project/issues/events{/number}","events_url":"https://api.github.com/repos/dsaenztagarro/project/events","assignees_url":"https://api.github.com/repos/dsaenztagarro/project/assignees{/user}","branches_url":"https://api.github.com/repos/dsaenztagarro/project/branches{/branch}","tags_url":"https://api.github.com/repos/dsaenztagarro/project/tags","blobs_url":"https://api.github.com/repos/dsaenztagarro/project/git/blobs{/sha}","git_tags_url":"https://api.github.com/repos/dsaenztagarro/project/git/tags{/sha}","git_refs_url":"https://api.github.com/repos/dsaenztagarro/project/git/refs{/sha}","trees_url":"https://api.github.com/repos/dsaenztagarro/project/git/trees{/sha}","statuses_url":"https://api.github.com/repos/dsaenztagarro/project/statuses/{sha}","languages_url":"https://api.github.com/repos/dsaenztagarro/project/languages","stargazers_url":"https://api.github.com/repos/dsaenztagarro/project/stargazers","contributors_url":"https://api.github.com/repos/dsaenztagarro/project/contributors","subscribers_url":"https://api.github.com/repos/dsaenztagarro/project/subscribers","subscription_url":"https://api.github.com/repos/dsaenztagarro/project/subscription","commits_url":"https://api.github.com/repos/dsaenztagarro/project/commits{/sha}","git_commits_url":"https://api.github.com/repos/dsaenztagarro/project/git/commits{/sha}","comments_url":"https://api.github.com/repos/dsaenztagarro/project/comments{/number}","issue_comment_url":"https://api.github.com/repos/dsaenztagarro/project/issues/comments{/number}","contents_url":"https://api.github.com/repos/dsaenztagarro/project/contents/{+path}","compare_url":"https://api.github.com/repos/dsaenztagarro/project/compare/{base}...{head}","merges_url":"https://api.github.com/repos/dsaenztagarro/project/merges","archive_url":"https://api.github.com/repos/dsaenztagarro/project/{archive_format}{/ref}","downloads_url":"https://api.github.com/repos/dsaenztagarro/project/downloads","issues_url":"https://api.github.com/repos/dsaenztagarro/project/issues{/number}","pulls_url":"https://api.github.com/repos/dsaenztagarro/project/pulls{/number}","milestones_url":"https://api.github.com/repos/dsaenztagarro/project/milestones{/number}","notifications_url":"https://api.github.com/repos/dsaenztagarro/project/notifications{?since,all,participating}","labels_url":"https://api.github.com/repos/dsaenztagarro/project/labels{/name}","releases_url":"https://api.github.com/repos/dsaenztagarro/project/releases{/id}","deployments_url":"https://api.github.com/repos/dsaenztagarro/project/deployments","created_at":"2017-01-07T14:50:44Z","updated_at":"2017-01-07T14:50:44Z","pushed_at":"2017-01-07T14:52:35Z","git_url":"git://github.com/dsaenztagarro/project.git","ssh_url":"git@github.com:dsaenztagarro/project.git","clone_url":"https://github.com/dsaenztagarro/project.git","svn_url":"https://github.com/dsaenztagarro/project","homepage":null,"size":0,"stargazers_count":0,"watchers_count":0,"language":null,"has_issues":true,"has_downloads":true,"has_wiki":true,"has_pages":false,"forks_count":0,"mirror_url":null,"open_issues_count":2,"forks":0,"open_issues":2,"watchers":0,"default_branch":"master"}},"_links":{"self":{"href":"https://api.github.com/repos/dsaenztagarro/project/pulls/2"},"html":{"href":"https://github.com/dsaenztagarro/project/pull/2"},"issue":{"href":"https://api.github.com/repos/dsaenztagarro/project/issues/2"},"comments":{"href":"https://api.github.com/repos/dsaenztagarro/project/issues/2/comments"},"review_comments":{"href":"https://api.github.com/repos/dsaenztagarro/project/pulls/2/comments"},"review_comment":{"href":"https://api.github.com/repos/dsaenztagarro/project/pulls/comments{/number}"},"commits":{"href":"https://api.github.com/repos/dsaenztagarro/project/pulls/2/commits"},"statuses":{"href":"https://api.github.com/repos/dsaenztagarro/project/statuses/7fb381e8d6e3ca9a2e64c5ffca93cbffb3595ebd"}},"merged":false,"mergeable":null,"mergeable_state":"unknown","merged_by":null,"comments":0,"review_comments":0,"maintainer_can_modify":false,"commits":1,"additions":1,"deletions":0,"changed_files":1}'
+    http_version: 
+  recorded_at: Sat, 07 Jan 2017 14:54:15 GMT
+recorded_with: VCR 3.0.3

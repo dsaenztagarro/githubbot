@@ -3,7 +3,8 @@ SimpleCov.start
 
 ENV['RACK_ENV'] = 'test'
 
-require 'test/unit'
+require 'minitest/autorun'
+require 'minitest/mock'
 require 'rack/test'
 require 'vcr'
 

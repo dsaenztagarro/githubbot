@@ -14,9 +14,10 @@ group :test do
   gem 'minitest'
   gem 'vcr'
   gem 'webmock'
-
-  gem 'simplecov'
+  # metrics
   gem 'codeclimate-test-reporter', '~> 1.0.0'
+  gem 'coveralls'
+  gem 'simplecov'
 end
 
 group :development do

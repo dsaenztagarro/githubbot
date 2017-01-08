@@ -27,13 +27,13 @@ class ScmService
 
     if repo.push
       issue = client.issue(repository, issue_id)
-      response = client.create_pull_request(
+      _response = client.create_pull_request(
         repository, base, head, issue['title'], body)
 
       puts "head: #{branch_name}"
       puts "repository: #{repository}"
     end
-  rescue Octokit::UnprocessableEntity => error
+  rescue Octokit::UnprocessableEntity => _error
   end
 
   def self.github_repository(url)

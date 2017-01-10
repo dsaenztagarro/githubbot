@@ -1,14 +1,19 @@
 require 'sinatra'
 require 'sinatra/reloader' if development?
-require 'yaml'
-require 'json'
+
 require 'byebug'
+require 'json'
+require 'mongo'
+require 'mongoid'
+require 'yaml'
 
 Dir.glob('lib/**/*.rb').each { |file| require_relative file }
 
 configure do
   set :port, 5000
   set(:config) { YAML.load_file('config/config.yml') }
+
+  Mongoid.load!('config/mongoid.yml')
 end
 
 def github_service

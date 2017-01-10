@@ -27,12 +27,13 @@ class ScmService
 
     if repo.push
       issue = client.issue(repository, issue_id)
-      _response = client.create_pull_request(
+      response = client.create_pull_request(
         repository, base, head, issue['title'], body)
-
-      puts "head: #{branch_name}"
-      puts "repository: #{repository}"
     end
+
+    Github::PullRequest.create!(
+      target_dir: target_dir, repository: repository, base: base, head: head) #, title: title, body: body)
+
   rescue Octokit::UnprocessableEntity => _error
   end
 

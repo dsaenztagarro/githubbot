@@ -1,10 +1,12 @@
 language: ruby
 rvm:
-- 2.3.0
-- 2.2.0
-- 2.1.0
+  - 2.3.0
+  - 2.2.6
+services:
+  - mongodb
 before_script:
   - cp config/config.yml.example config/config.yml
+  - cp config/mongoid.yml.example config/mongoid.yml
   - git config --global user.name "Test user"
   - git config --global user.email test@hostname.com
 script:

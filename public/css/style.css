@@ -1,6 +1,17 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 @font-face {
   font-family: 'Ubuntu-R';
   src: url('/fonts/Ubuntu-R.ttf');
 }
 
-body { font-family: 'Ubuntu-R', serif; }
+body {
+  font-family: 'Ubuntu-R', serif;
+}
+
+td {
+  padding-left: 10px;
+}

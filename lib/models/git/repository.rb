@@ -12,9 +12,15 @@ module Git
     end
 
     # @return [Boolean] Marks whether or not are changes pending to be commited
-    def nothing_to_commit?
-      run "git status --short" do |outerr, status|
-        outerr.chomp.empty?
+    def uncommited_changes?
+      run "git status --short" do |outerr, _status|
+        !outerr.chomp.empty?
+      end
+    end
+
+    def unpushed_commits?
+      run "git log origin/#{current_branch}..#{current_branch}" do |outerr, _|
+        !outerr.chomp.empty?
       end
     end
 

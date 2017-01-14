@@ -24,16 +24,18 @@ class ScmService
     issue_id    = branch_name.to_i
     body        = "This PR implements ##{issue_id}"
 
-    return unless repo.nothing_to_commit?
+    return if repo.uncommited_changes?
 
-    if repo.push
-      issue = client.issue(repository, issue_id)
-      response = client.create_pull_request(
-        repository, base, head, issue['title'], body)
+    if repo.unpushed_commits?
+      return unless repo.push
     end
 
+    issue = client.issue(repository, issue_id)
+    response = client.create_pull_request(
+      repository, base, head, issue['title'], body)
+
     Github::PullRequest.create!(
-      target_dir: target_dir, created_at: Date.today, repository: repository, base: base, head: head) #, title: title, body: body)
+      target_dir: target_dir, repository: repository, base: base, head: head) #, title: title, body: body)
 
   rescue Octokit::UnprocessableEntity => _error
   end

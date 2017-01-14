@@ -23,6 +23,8 @@ class PostPullRequestsGitTest < Minitest::Test
     # Clone again the repo with custom directory name to avoid error:
     # fatal: destination path 'project-xxxxxxxxxx' already exists and is not an empty directory.
     @repo_url = clone_repo(path, directory: "project-2-#{timestamp}")
+
+    Mongoid.purge!
   end
 
   def teardown

@@ -30,15 +30,15 @@ module Git
         write_log(command, outerr)
         return true if status.success?
 
-        command = "git push --set-upstream origin #{branch_name}"
+        command = "git push --set-upstream origin #{current_branch}"
         outerr, status = ::Open3.capture2e(command)
         write_log(command, outerr)
         status.success?
       end
     end
 
-    def branch_name
-      @branch_name ||= Dir.chdir(dir) { `git rev-parse --abbrev-ref HEAD`.chomp }
+    def current_branch
+      @current_branch ||= Dir.chdir(dir) { `git rev-parse --abbrev-ref HEAD`.chomp }
     end
 
     private

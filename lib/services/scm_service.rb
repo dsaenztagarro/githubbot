@@ -17,7 +17,7 @@ class ScmService
     repo = Git::Repository.new(target_dir, log)
 
     repository  = self.class.github_repository(repo.remote_url)
-    branch_name = repo.branch_name
+    branch_name = repo.current_branch
     base        = 'master'
     head        = branch_name
     issue_id    = branch_name.to_i

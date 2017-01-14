@@ -19,12 +19,8 @@ module Git
       end
     end
 
-    def url
-      @name ||= begin
-        Dir.chdir(dir) do
-          `git remote -v | awk 'NR == 1 && /origin/ {print $2}'`.chomp
-        end
-      end
+    def remote_url
+      `git remote get-url --push origin`.chomp
     end
 
     def push

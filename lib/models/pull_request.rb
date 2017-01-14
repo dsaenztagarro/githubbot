@@ -9,4 +9,6 @@ class Job
   field :head, type: String # the branch name
   field :created_at, type: Date
   field :scm, type: Hash
+
+  field :created_at, type: DateTime
 end

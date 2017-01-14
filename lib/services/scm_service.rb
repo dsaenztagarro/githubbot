@@ -33,7 +33,7 @@ class ScmService
     end
 
     Github::PullRequest.create!(
-      target_dir: target_dir, repository: repository, base: base, head: head) #, title: title, body: body)
+      target_dir: target_dir, created_at: Date.today, repository: repository, base: base, head: head) #, title: title, body: body)
 
   rescue Octokit::UnprocessableEntity => _error
   end

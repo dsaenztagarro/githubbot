@@ -13,27 +13,28 @@ module Git
 
     # @return [Boolean] Marks whether or not are changes pending to be commited
     def nothing_to_commit?
-      Dir.chdir(dir) do
-        command_log, _status = run "git status --short"
-        command_log.chomp.empty?
+      run "git status --short" do |outerr, status|
+        outerr.chomp.empty?
       end
     end
 
-    def remote_url
+    def remote_origin_url
       `git remote get-url --push origin`.chomp
     end
 
-    def push
-      Dir.chdir(dir) do
-        command = "git push"
-        outerr, status = ::Open3.capture2e(command)
-        write_log(command, outerr)
-        return true if status.success?
+    alias :remote_url :remote_origin_url
 
-        command = "git push --set-upstream origin #{current_branch}"
-        outerr, status = ::Open3.capture2e(command)
-        write_log(command, outerr)
-        status.success?
+    # @return [Boolean] Marks whether it is configured a remote upstream for
+    #   current branch
+    def remote?
+      !`git config branch.#{current_branch}.remote`.chomp.empty?
+    end
+
+    def push
+      if remote?
+        run 'git push'
+      else
+        run "git push --set-upstream origin #{current_branch}"
       end
     end
 
@@ -46,14 +47,11 @@ module Git
     def run(command)
       Dir.chdir(dir) do
         outerr, status = ::Open3.capture2e(command)
-        write_log(command, outerr)
-        [outerr, status]
+        log.puts "$ #{command}"
+        log.puts outerr
+        return yield(outerr, status) if block_given?
+        status.success?
       end
-    end
-
-    def write_log(command, outerr)
-      log.puts "$ #{command}"
-      log.puts outerr
     end
   end
 end

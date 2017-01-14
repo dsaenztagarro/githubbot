@@ -14,6 +14,7 @@ class ScmService
     puts "Target dir: #{target_dir}"
 
     log = StringIO.new
+
     repo = Git::Repository.new(target_dir, log)
 
     repository  = self.class.github_repository(repo.remote_url)

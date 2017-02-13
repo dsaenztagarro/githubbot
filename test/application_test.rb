@@ -1,10 +1,7 @@
 require_relative 'test_helper'
-require_relative 'support/git_repo_helper'
-require 'byebug'
 
 class ApplicationTest < Minitest::Test
   include Rack::Test::Methods
-  include GitRepoHelper
 
   def app
     Sinatra::Application

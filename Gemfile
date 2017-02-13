@@ -13,6 +13,7 @@ end
 
 group :test do
   gem 'minitest'
+  gem 'rspec'
   gem 'vcr'
   gem 'webmock'
   # metrics
@@ -22,6 +23,10 @@ group :test do
 end
 
 group :development do
-  gem 'byebug'
   gem 'sinatra-contrib'
+end
+
+group :development, :test do
+  gem 'pry'
+  gem 'pry-byebug'
 end

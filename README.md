@@ -5,6 +5,12 @@
 
 # Scm
 
+Use `RAILS_ENV` to specify the environment:
+
+```bash
+RAILS_ENV=development ruby application.rb
+```
+
 ## Requirements
 
 - `git 2.11` or greater

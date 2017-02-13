@@ -1,7 +1,6 @@
 require 'sinatra'
 require 'sinatra/reloader' if development?
 
-require 'byebug'
 require 'json'
 require 'mongo'
 require 'mongoid'
@@ -11,9 +10,10 @@ Dir.glob('lib/**/*.rb').each { |file| require_relative file }
 
 configure do
   set :port, 5000
-  set(:config) { YAML.load_file('config/config.yml') }
+  set(:config) { }
 
   Mongoid.load!('config/mongoid.yml')
+  Application.load('config/config.yml')
 end
 
 def github_service
@@ -24,10 +24,21 @@ get '/version' do
   erb :version
 end
 
+get '/jobs' do
+  collection = Job.limit(10).to_a
+  @jobs = JobDecorator.wrap(collection)
+  erb :'jobs/index'
+end
+
+get '/jobs/:id' do |job_id|
+  job = Job.find(job_id)
+  @job = JobDecorator.new(job)
+  erb :'jobs/show'
+end
+
 post '/pull_requests' do
   payload = JSON.parse(request.body.read)
-  client = Github::Client.new(settings.config)
-  service = ScmService.new(client)
+  service = ScmService.new
   service.create_pull_request(payload)
 end
 

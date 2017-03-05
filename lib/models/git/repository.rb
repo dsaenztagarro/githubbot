@@ -6,43 +6,64 @@ module Git
 
     # @param dir [String] local dir path of a git repository
     # @param log [StringIO] log buffer
-    def initialize(dir, log)
+    def initialize(dir, log = StringIO.new)
       @dir = dir.freeze
       @log = log
     end
 
-    # @return [Boolean] Marks whether or not are changes pending to be commited
-    def nothing_to_commit?
-      Dir.chdir(dir) do
-        command_log, _status = run "git status --short"
-        command_log.chomp.empty?
+    # Getters
+    #
+
+    def remote_origin_url
+      if Sinatra::Application.test?
+        "git@github.com:dsaenztagarro/githubbot.git"
+      else
+        Dir.chdir(dir) { `git config --get remote.origin.url`.chomp }
       end
     end
 
-    def url
-      @name ||= begin
-        Dir.chdir(dir) do
-          `git remote -v | awk 'NR == 1 && /origin/ {print $2}'`.chomp
-        end
+    def current_branch
+      @current_branch ||=
+        Dir.chdir(dir) { `git rev-parse --abbrev-ref HEAD`.chomp }
+    end
+
+    # Checkers
+    #
+
+    # @return [Boolean] Marks whether or not are changes pending to be commited
+    def uncommited_changes?
+      run "git status --short" do |outerr, _status|
+        !outerr.chomp.empty?
       end
     end
+
+    def unpushed_commits?
+      run "git log origin/#{current_branch}..#{current_branch}" do |outerr, _|
+        !outerr.chomp.empty?
+      end
+    end
+
+    # @return [Boolean] Marks whether it is configured a remote upstream for
+    #   current branch
+    def remote?
+      !`git config branch.#{current_branch}.remote`.chomp.empty?
+    end
+
+    # Actions
+    #
 
     def push
-      Dir.chdir(dir) do
-        command = "git push"
-        outerr, status = ::Open3.capture2e(command)
-        write_log(command, outerr)
-        return true if status.success?
-
-        command = "git push --set-upstream origin #{branch_name}"
-        outerr, status = ::Open3.capture2e(command)
-        write_log(command, outerr)
-        status.success?
+      if remote?
+        run 'git push'
+      else
+        run "git push --set-upstream origin #{current_branch}"
       end
     end
 
-    def branch_name
-      @branch_name ||= Dir.chdir(dir) { `git rev-parse --abbrev-ref HEAD`.chomp }
+    def to_local_repository
+      LocalRepository.new(type: "git",
+                          dir: dir,
+                          branch_name: current_branch)
     end
 
     private
@@ -50,14 +71,11 @@ module Git
     def run(command)
       Dir.chdir(dir) do
         outerr, status = ::Open3.capture2e(command)
-        write_log(command, outerr)
-        [outerr, status]
+        log.puts "$ #{command}"
+        log.puts outerr
+        return yield(outerr, status) if block_given?
+        status.success?
       end
-    end
-
-    def write_log(command, outerr)
-      log.puts "$ #{command}"
-      log.puts outerr
     end
   end
 end

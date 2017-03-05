@@ -1,0 +1,257 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.github.com/user
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.github.v3+json
+      User-Agent:
+      - Octokit Ruby Gem 4.6.2
+      Content-Type:
+      - application/json
+      Authorization:
+      - token 4cb01a2c93049a294ffc3e132c704af096e2ec78
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - GitHub.com
+      Date:
+      - Sun, 15 Jan 2017 00:03:29 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Status:
+      - 200 OK
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4999'
+      X-Ratelimit-Reset:
+      - '1484442209'
+      Cache-Control:
+      - private, max-age=60, s-maxage=60
+      Vary:
+      - Accept, Authorization, Cookie, X-GitHub-OTP
+      - Accept-Encoding
+      Etag:
+      - W/"1c4dbf166fe753216c770c61640d2707"
+      Last-Modified:
+      - Fri, 06 Jan 2017 08:16:09 GMT
+      X-Oauth-Scopes:
+      - admin:gpg_key, admin:org, admin:org_hook, admin:public_key, admin:repo_hook,
+        gist, notifications, repo
+      X-Accepted-Oauth-Scopes:
+      - ''
+      X-Github-Media-Type:
+      - github.v3; format=json
+      Access-Control-Expose-Headers:
+      - ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset,
+        X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Security-Policy:
+      - default-src 'none'
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - deny
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Served-By:
+      - a51acaae89a7607fd7ee967627be18e4
+      X-Github-Request-Id:
+      - D525799A:67E2:1CE66C3:587ABC51
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJsb2dpbiI6ImRzYWVuenRhZ2Fycm8iLCJpZCI6MTY4NTQ4OSwiYXZhdGFy
+        X3VybCI6Imh0dHBzOi8vYXZhdGFycy5naXRodWJ1c2VyY29udGVudC5jb20v
+        dS8xNjg1NDg5P3Y9MyIsImdyYXZhdGFyX2lkIjoiIiwidXJsIjoiaHR0cHM6
+        Ly9hcGkuZ2l0aHViLmNvbS91c2Vycy9kc2Flbnp0YWdhcnJvIiwiaHRtbF91
+        cmwiOiJodHRwczovL2dpdGh1Yi5jb20vZHNhZW56dGFnYXJybyIsImZvbGxv
+        d2Vyc191cmwiOiJodHRwczovL2FwaS5naXRodWIuY29tL3VzZXJzL2RzYWVu
+        enRhZ2Fycm8vZm9sbG93ZXJzIiwiZm9sbG93aW5nX3VybCI6Imh0dHBzOi8v
+        YXBpLmdpdGh1Yi5jb20vdXNlcnMvZHNhZW56dGFnYXJyby9mb2xsb3dpbmd7
+        L290aGVyX3VzZXJ9IiwiZ2lzdHNfdXJsIjoiaHR0cHM6Ly9hcGkuZ2l0aHVi
+        LmNvbS91c2Vycy9kc2Flbnp0YWdhcnJvL2dpc3Rzey9naXN0X2lkfSIsInN0
+        YXJyZWRfdXJsIjoiaHR0cHM6Ly9hcGkuZ2l0aHViLmNvbS91c2Vycy9kc2Fl
+        bnp0YWdhcnJvL3N0YXJyZWR7L293bmVyfXsvcmVwb30iLCJzdWJzY3JpcHRp
+        b25zX3VybCI6Imh0dHBzOi8vYXBpLmdpdGh1Yi5jb20vdXNlcnMvZHNhZW56
+        dGFnYXJyby9zdWJzY3JpcHRpb25zIiwib3JnYW5pemF0aW9uc191cmwiOiJo
+        dHRwczovL2FwaS5naXRodWIuY29tL3VzZXJzL2RzYWVuenRhZ2Fycm8vb3Jn
+        cyIsInJlcG9zX3VybCI6Imh0dHBzOi8vYXBpLmdpdGh1Yi5jb20vdXNlcnMv
+        ZHNhZW56dGFnYXJyby9yZXBvcyIsImV2ZW50c191cmwiOiJodHRwczovL2Fw
+        aS5naXRodWIuY29tL3VzZXJzL2RzYWVuenRhZ2Fycm8vZXZlbnRzey9wcml2
+        YWN5fSIsInJlY2VpdmVkX2V2ZW50c191cmwiOiJodHRwczovL2FwaS5naXRo
+        dWIuY29tL3VzZXJzL2RzYWVuenRhZ2Fycm8vcmVjZWl2ZWRfZXZlbnRzIiwi
+        dHlwZSI6IlVzZXIiLCJzaXRlX2FkbWluIjpmYWxzZSwibmFtZSI6IkRhdmlk
+        IFPDoWVueiIsImNvbXBhbnkiOiJCZUJhbmpvIiwiYmxvZyI6Imh0dHA6Ly9k
+        c2Flbnp0YWdhcnJvLmdpdGh1Yi5pby8iLCJsb2NhdGlvbiI6Ik1hZHJpZCIs
+        ImVtYWlsIjoiZGF2aWQuc2FlbnoudGFnYXJyb0BnbWFpbC5jb20iLCJoaXJl
+        YWJsZSI6dHJ1ZSwiYmlvIjpudWxsLCJwdWJsaWNfcmVwb3MiOjEzNywicHVi
+        bGljX2dpc3RzIjo4LCJmb2xsb3dlcnMiOjE0LCJmb2xsb3dpbmciOjY0LCJj
+        cmVhdGVkX2F0IjoiMjAxMi0wNC0yN1QxNDozNjoyNFoiLCJ1cGRhdGVkX2F0
+        IjoiMjAxNy0wMS0wNlQwODoxNjowOVoifQ==
+    http_version: 
+  recorded_at: Sun, 15 Jan 2017 00:03:39 GMT
+- request:
+    method: get
+    uri: https://api.github.com/repos/MyFakeTestOrg/project/issues/1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.github.v3+json
+      User-Agent:
+      - Octokit Ruby Gem 4.6.2
+      Content-Type:
+      - application/json
+      Authorization:
+      - token 4cb01a2c93049a294ffc3e132c704af096e2ec78
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - GitHub.com
+      Date:
+      - Sun, 15 Jan 2017 00:03:30 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Status:
+      - 200 OK
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4998'
+      X-Ratelimit-Reset:
+      - '1484442209'
+      Cache-Control:
+      - private, max-age=60, s-maxage=60
+      Vary:
+      - Accept, Authorization, Cookie, X-GitHub-OTP
+      - Accept-Encoding
+      Etag:
+      - W/"9a3fc7f8230e5b1aac3e076c4effd7fd"
+      Last-Modified:
+      - Sun, 15 Jan 2017 00:00:38 GMT
+      X-Oauth-Scopes:
+      - admin:gpg_key, admin:org, admin:org_hook, admin:public_key, admin:repo_hook,
+        gist, notifications, repo
+      X-Accepted-Oauth-Scopes:
+      - public_repo, repo
+      X-Github-Media-Type:
+      - github.v3; format=json
+      Access-Control-Expose-Headers:
+      - ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset,
+        X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Security-Policy:
+      - default-src 'none'
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - deny
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Served-By:
+      - 0e17b94a265a427d9cafe798ceea7c02
+      X-Github-Request-Id:
+      - D525799A:67E1:11B2BAD:587ABC51
+    body:
+      encoding: ASCII-8BIT
+      string: '{"url":"https://api.github.com/repos/MyFakeTestOrg/project/issues/1","repository_url":"https://api.github.com/repos/MyFakeTestOrg/project","labels_url":"https://api.github.com/repos/MyFakeTestOrg/project/issues/1/labels{/name}","comments_url":"https://api.github.com/repos/MyFakeTestOrg/project/issues/1/comments","events_url":"https://api.github.com/repos/MyFakeTestOrg/project/issues/1/events","html_url":"https://github.com/MyFakeTestOrg/project/issues/1","id":200837851,"number":1,"title":"Fake
+        issue title","user":{"login":"dsaenztagarro","id":1685489,"avatar_url":"https://avatars.githubusercontent.com/u/1685489?v=3","gravatar_id":"","url":"https://api.github.com/users/dsaenztagarro","html_url":"https://github.com/dsaenztagarro","followers_url":"https://api.github.com/users/dsaenztagarro/followers","following_url":"https://api.github.com/users/dsaenztagarro/following{/other_user}","gists_url":"https://api.github.com/users/dsaenztagarro/gists{/gist_id}","starred_url":"https://api.github.com/users/dsaenztagarro/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/dsaenztagarro/subscriptions","organizations_url":"https://api.github.com/users/dsaenztagarro/orgs","repos_url":"https://api.github.com/users/dsaenztagarro/repos","events_url":"https://api.github.com/users/dsaenztagarro/events{/privacy}","received_events_url":"https://api.github.com/users/dsaenztagarro/received_events","type":"User","site_admin":false},"labels":[],"state":"open","locked":false,"assignee":null,"assignees":[],"milestone":null,"comments":0,"created_at":"2017-01-15T00:00:38Z","updated_at":"2017-01-15T00:00:38Z","closed_at":null,"body":"Fake
+        issue description","closed_by":null}'
+    http_version: 
+  recorded_at: Sun, 15 Jan 2017 00:03:39 GMT
+- request:
+    method: post
+    uri: https://api.github.com/repos/MyFakeTestOrg/project/pulls
+    body:
+      encoding: UTF-8
+      string: '{"base":"master","head":"1-fake-issue","title":"Fake issue title","body":"This
+        PR implements #1"}'
+    headers:
+      Accept:
+      - application/vnd.github.v3+json
+      User-Agent:
+      - Octokit Ruby Gem 4.6.2
+      Content-Type:
+      - application/json
+      Authorization:
+      - token 4cb01a2c93049a294ffc3e132c704af096e2ec78
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 422
+      message: Unprocessable Entity
+    headers:
+      Server:
+      - GitHub.com
+      Date:
+      - Sun, 15 Jan 2017 00:03:37 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '243'
+      Status:
+      - 422 Unprocessable Entity
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4997'
+      X-Ratelimit-Reset:
+      - '1484442209'
+      X-Oauth-Scopes:
+      - admin:gpg_key, admin:org, admin:org_hook, admin:public_key, admin:repo_hook,
+        gist, notifications, repo
+      X-Accepted-Oauth-Scopes:
+      - ''
+      X-Github-Media-Type:
+      - github.v3; format=json
+      Access-Control-Expose-Headers:
+      - ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset,
+        X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Security-Policy:
+      - default-src 'none'
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - deny
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Github-Request-Id:
+      - D525799A:67E5:1D7C298:587ABC59
+    body:
+      encoding: UTF-8
+      string: '{"message":"Validation Failed","errors":[{"resource":"PullRequest","field":"base","code":"invalid"},{"resource":"PullRequest","field":"head","code":"invalid"}],"documentation_url":"https://developer.github.com/v3/pulls/#create-a-pull-request"}'
+    http_version: 
+  recorded_at: Sun, 15 Jan 2017 00:03:47 GMT
+recorded_with: VCR 3.0.3

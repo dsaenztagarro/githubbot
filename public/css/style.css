@@ -4,14 +4,95 @@
 }
 
 @font-face {
+  font-family: 'Ubuntu-L';
+  src: url('/ubuntu-font-family/Ubuntu-L.ttf');
+}
+
+@font-face {
   font-family: 'Ubuntu-R';
-  src: url('/fonts/Ubuntu-R.ttf');
+  src: url('/ubuntu-font-family/Ubuntu-R.ttf');
 }
 
-body {
-  font-family: 'Ubuntu-R', serif;
+@font-face {
+  font-family: 'Ubuntu-M';
+  src: url('/ubuntu-font-family/Ubuntu-M.ttf');
 }
 
-td {
-  padding-left: 10px;
+@font-face {
+  font-family: 'Ubuntu-B';
+  src: url('/ubuntu-font-family/Ubuntu-B.ttf');
+}
+
+body { font-family: 'Ubuntu-M'; }
+
+h1, h2, h3, h4, h5, h6 { font-family: 'Ubuntu-B' }
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul li {
+  margin: 0;
+  margin-top: 5px;
+  padding: 0;
+}
+
+.sucess span.job-name {
+  color: green;
+}
+
+.error span.job-name {
+  color: red;
+}
+
+span.branch {
+  font-family: 'Ubuntu-B';
+}
+
+span.head-branch {
+  color: purple;
+}
+
+span.base-branch {
+  color: olive;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+ul.list-icon li {
+  font-family: 'Ubuntu-L';
+  color: slategrey;
+  margin-top: 4px;
+}
+
+ul.list-icon li span {
+  margin-left: 5px;
+}
+
+ul.tabs {
+  margin-top: 15px;
+}
+
+.backtrace {
+  white-space: nowrap;
+  font-family:Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New;
+  font-size: 11px;
+}
+
+.backtrace .error-message {
+  font-size: 14px;
+}
+
+.backtrace span {
+  display: inline-block;
 }

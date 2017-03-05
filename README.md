@@ -1,7 +1,7 @@
-[![Build Status](https://travis-ci.org/dsaenztagarro/githubbot.svg?branch=master)](https://travis-ci.org/dsaenztagarro/githubbot)
-[![Code Climate](https://codeclimate.com/github/dsaenztagarro/githubbot/badges/gpa.svg)](https://codeclimate.com/github/dsaenztagarro/githubbot)
-[![Coverage Status](https://coveralls.io/repos/github/dsaenztagarro/githubbot/badge.svg?branch=master)](https://coveralls.io/github/dsaenztagarro/githubbot?branch=master)
-[![Dependency Status](https://gemnasium.com/badges/github.com/dsaenztagarro/githubbot.svg)](https://gemnasium.com/github.com/dsaenztagarro/githubbot)
+[![Build Status](https://travis-ci.org/dsaenztagarro/mazingerz.svg?branch=master)](https://travis-ci.org/dsaenztagarro/mazingerz)
+[![Code Climate](https://codeclimate.com/github/dsaenztagarro/mazingerz/badges/gpa.svg)](https://codeclimate.com/github/dsaenztagarro/mazingerz)
+[![Coverage Status](https://coveralls.io/repos/github/dsaenztagarro/mazingerz/badge.svg?branch=master)](https://coveralls.io/github/dsaenztagarro/mazingerz?branch=master)
+[![Dependency Status](https://gemnasium.com/badges/github.com/dsaenztagarro/mazingerz.svg)](https://gemnasium.com/github.com/dsaenztagarro/mazingerz)
 
 # Mazinger Z
 

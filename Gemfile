@@ -13,7 +13,6 @@ end
 
 group :test do
   gem 'minitest'
-  gem 'rspec'
   gem 'vcr'
   gem 'webmock'
   # metrics

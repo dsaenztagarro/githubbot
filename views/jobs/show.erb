@@ -24,7 +24,7 @@
     <p class="backtrace">
       <span class="error-message"><%= @job.error_message %></span><br><br>
       <% @job.error_backtrace.each do |trace| %>
-        <span><%= trace %></span><br>
+        <span><%= h trace %></span><br>
       <% end %>
     </p>
   </div>

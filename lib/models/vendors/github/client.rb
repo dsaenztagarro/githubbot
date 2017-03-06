@@ -8,9 +8,7 @@ module Vendors
 
       def initialize(config = Application.config)
         @config = config
-        @client = Octokit::Client.new user: github_user,
-                                      password: github_password
-        @client.login
+        @client = Octokit::Client.new access_token: github_access_token
       end
 
       def process(request)

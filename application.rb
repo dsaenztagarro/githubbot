@@ -16,6 +16,12 @@ configure do
   Application.load('config/config.yml')
 end
 
+helpers do
+  def h(text)
+    Rack::Utils.escape_html text
+  end
+end
+
 def github_service
   @github_service ||= Github::Service.new(settings.config)
 end

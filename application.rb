@@ -31,7 +31,7 @@ get '/version' do
 end
 
 get '/jobs' do
-  collection = Job.limit(10).to_a
+  collection = Job.limit(30).to_a
   @jobs = JobDecorator.wrap(collection)
   erb :'jobs/index'
 end

@@ -39,24 +39,12 @@ ul li {
   padding: 0;
 }
 
-.sucess span.job-name {
+.success span.job-name {
   color: green;
 }
 
 .error span.job-name {
   color: red;
-}
-
-span.branch {
-  font-family: 'Ubuntu-B';
-}
-
-span.head-branch {
-  color: purple;
-}
-
-span.base-branch {
-  color: olive;
 }
 
 a {

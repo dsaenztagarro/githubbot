@@ -2,7 +2,6 @@ module Users
   module Bebanjo
     module Github
       class Config
-
         # @param git_repo    [ Git::Repository]
         # @param github_repo [ Github::Repository]
         # @param client      [ Github::Client]
@@ -18,7 +17,6 @@ module Users
             title: issue['title'],
             body: "This PR implements ##{issue_id}" }
         end
-
       end
     end
   end

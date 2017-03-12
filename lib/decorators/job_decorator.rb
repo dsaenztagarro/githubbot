@@ -14,7 +14,7 @@ class JobDecorator < SimpleDelegator
   end
 
   def name
-    job_type.gsub('_', ' ').upcase
+    job_type.tr('_', ' ').upcase
   end
 
   def error_message
@@ -29,27 +29,35 @@ class JobDecorator < SimpleDelegator
     super.strftime('%Y/%m/%d %H:%M:%S')
   end
 
-  def repository_name
-    pull_request.platform_repository.settings["name"]
+  def repo_name
+    platform_repo['name']
   end
 
-  def repository_url
-    pull_request.platform_repository.settings["html_url"]
+  def repo_url
+    platform_repo['html_url']
   end
 
   def owner_name
-    pull_request.platform_repository.settings["owner"]["login"]
+    platform_repo['owner']['login']
   end
 
   def owner_url
-    pull_request.platform_repository.settings["owner"]["html_url"]
+    platform_repo['owner']['html_url']
   end
 
-  def local_repository_path
-    pull_request.local_repository.dir
+  def local_repo_dir
+    local_repo['dir']
   end
 
-  def local_branch_name
-    pull_request.local_repository.branch_name
+  def local_repo_branch
+    local_repo['branch_name']
+  end
+
+  def platform_repo
+    pull_request.platform_repo
+  end
+
+  def local_repo
+    pull_request.local_repo
   end
 end

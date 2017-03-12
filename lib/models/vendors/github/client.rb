@@ -25,8 +25,10 @@ module Vendors
         client.issue(*args)
       end
 
+      # @return [Hash] related to Sawyer::Resource
       def create_pull_request(repo:, base:, head:, title:, body:)
-        client.create_pull_request(repo, base, head, title, body)
+        response = client.create_pull_request(repo, base, head, title, body)
+        response.to_hash
       end
 
       private
@@ -34,15 +36,15 @@ module Vendors
       attr_reader :config
 
       def github_access_token
-        config["github"]["personal_access_token"]
+        config['github']['personal_access_token']
       end
 
       def github_user
-        config["github"]["user"]
+        config['github']['user']
       end
 
       def github_password
-        config["github"]["password"]
+        config['github']['password']
       end
     end
   end

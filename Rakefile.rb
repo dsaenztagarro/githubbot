@@ -14,7 +14,7 @@ namespace :github do
     client = Octokit::Client.new login: login, password: password
 
     scopes = %w(admin:gpg_key admin:org admin:org_hook admin:public_key
-      admin:repo_hook delete_repo gist notifications repo user)
+                admin:repo_hook delete_repo gist notifications repo user)
 
     user = begin
       # To keep our SMS delivery fast for all 2FA users, the API only sends the
@@ -26,17 +26,17 @@ namespace :github do
       otp = STDIN.noecho(&:gets).chomp
 
       auth = client.create_authorization scopes: scopes,
-        note: "Mazinger Z - #{Time.now}",
-        headers: {'X-GitHub-OTP' => otp}
+                                         note: "Mazinger Z - #{Time.now}",
+                                         headers: { 'X-GitHub-OTP' => otp }
 
       puts "New Oauth access token: #{auth.token}"
 
-      puts "Validating new token works..."
+      puts 'Validating new token works...'
 
-      client = Octokit::Client.new :login => auth.token,
-        :password => 'x-oauth-basic', :auto_paginate => true
+      client = Octokit::Client.new login: auth.token,
+                                   password: 'x-oauth-basic', auto_paginate: true
 
-      repo = client.repositories(nil, :type => 'all').first
+      repo = client.repositories(nil, type: 'all').first
       puts(client.repository(repo.full_name))
     end
   end

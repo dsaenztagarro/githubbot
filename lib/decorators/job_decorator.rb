@@ -50,7 +50,7 @@ class JobDecorator < SimpleDelegator
   end
 
   def local_repo_branch
-    local_repo['branch_name']
+    local_repo['branch']
   end
 
   def platform_repo

@@ -9,16 +9,18 @@ module Vendors
       end
 
       # @param git_repo [Git::Repository]
+      # @return [Vendors::Github::PullRequest]
       def create_pull_request(git_repo)
         begin
           github_repo = Github::Repository.for_url(git_repo.remote_origin_url)
-          args = user.get_pull_request_config(git_repo, github_repo, client)
+          args = user.pull_request_args(git_repo, github_repo, client)
+          require 'pry'; binding.pry
           response = client.create_pull_request(args)
         rescue Octokit::Error => error
           @error = error
         end
 
-        PullRequestResult.new(
+        Vendors::Responses::CreatePullRequest.new(
           args: args,
           status: @error.nil? ? 'success' : 'error',
           local_repo: git_repo,

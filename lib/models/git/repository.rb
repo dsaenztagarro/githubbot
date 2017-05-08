@@ -32,7 +32,7 @@ module Git
 
     # @return [Boolean] Marks whether or not are changes pending to be commited
     def uncommited_changes?
-      run 'git status --short' do |outerr, _status|
+      run 'git status --porcelain' do |outerr, _status|
         !outerr.chomp.empty?
       end
     end

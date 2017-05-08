@@ -16,6 +16,7 @@
       <a href="<%= @job.repo_url %>" target="_blank"><%= @job.repo_name %></a></span>
     </li>
     <li><i class="fa fa-github"></i><span>Branch <%= @job.local_repo_branch %></span></li>
+    <li><i class="fa fa-folder-open"></i><span><%= @job.local_repo_dir %></span></li>
     <li><i class="fa fa-calendar"></i><span><%= @job.created_at %></span></li>
   </ul>
   <% end %>

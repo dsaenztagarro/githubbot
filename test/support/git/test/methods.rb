@@ -18,7 +18,7 @@ module Git
         Dir.chdir(base_dir) do
           system("git clone #{repo_path} #{directory_path}")
         end
-        directory_path || repo_path.sub('.git','')
+        directory_path || repo_path.sub('.git', '')
       end
 
       def timestamp

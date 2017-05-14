@@ -8,7 +8,8 @@ module Vendors
 
       def initialize(config = Application.config)
         @config = config
-        @client = Octokit::Client.new access_token: github_access_token
+        @client = Octokit::Client.new login: github_access_token,
+                                      password: 'x-oauth-basic'
       end
 
       def process(request)
@@ -20,12 +21,24 @@ module Vendors
         client.repository(repo)
       end
 
-      def issue(*args)
-        client.issue(*args)
+      # @param repo [String]
+      # @param number [Fixnum]
+      # @return [Vendors::Github::Response::Issue]
+      def issue(repo, number)
+        response = client.issue(repo, number)
+        Vendors::Github::Responses::Issue.new(response)
       end
 
-      def create_pull_request(repo:, base:, head:, title:, body:)
-        client.create_pull_request(repo, base, head, title, body)
+      def issue_comments(*args)
+        client.issue_comments(*args)
+      end
+
+      # @param args [Vendors::Github::PullRequestArgs]
+      # @return [Vendors::Github::Response::CreatePullRequest]
+      def create_pull_request(args)
+        response = client.create_pull_request(
+          args.repo, args.base, args.head, args.title, args.body)
+        Vendors::Github::Responses::CreatePullRequest.new(response)
       end
 
       private
@@ -33,15 +46,15 @@ module Vendors
       attr_reader :config
 
       def github_access_token
-        config["github"]["personal_access_token"]
+        config['github']['personal_access_token']
       end
 
       def github_user
-        config["github"]["user"]
+        config['github']['user']
       end
 
       def github_password
-        config["github"]["password"]
+        config['github']['password']
       end
     end
   end

@@ -16,7 +16,7 @@ module Git
 
     def remote_origin_url
       if Sinatra::Application.test?
-        "git@github.com:dsaenztagarro/githubbot.git"
+        'git@github.com:dsaenztagarro/githubbot.git'
       else
         Dir.chdir(dir) { `git config --get remote.origin.url`.chomp }
       end
@@ -32,7 +32,7 @@ module Git
 
     # @return [Boolean] Marks whether or not are changes pending to be commited
     def uncommited_changes?
-      run "git status --short" do |outerr, _status|
+      run 'git status --porcelain' do |outerr, _status|
         !outerr.chomp.empty?
       end
     end
@@ -60,10 +60,10 @@ module Git
       end
     end
 
-    def to_local_repository
-      LocalRepository.new(type: "git",
-                          dir: dir,
-                          branch_name: current_branch)
+    def as_json
+      { type: 'git',
+        dir: dir,
+        branch: current_branch }
     end
 
     private

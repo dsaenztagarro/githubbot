@@ -2,8 +2,8 @@ module Vendors
   class Platform
     class << self
       MAPPINGS = {
-        "github.com" => "Github"
-      }
+        'github.com' => 'Github'
+      }.freeze
 
       def for_url(url)
         platform_name = MAPPINGS[hostname_for(url)]
@@ -13,7 +13,7 @@ module Vendors
 
       def hostname_for(url)
         match = /git@(?<hostname>.*):(.*).git/.match(url)
-        match["hostname"]
+        match['hostname']
       end
     end
   end

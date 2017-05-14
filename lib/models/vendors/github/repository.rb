@@ -8,26 +8,25 @@ module Vendors
         @client = client
       end
 
-      def settings
-        @settings ||= client.repository(name)
-      end
-
-      def to_platform_repository
-        PlatformRepository.new(platform_name: "Github",
-                               repository_name: name,
-                               settings: settings.to_hash)
-
-      end
-
       # @param url [String] Git repository remote origin url
       def self.for_url(url)
         if match = /git@(?<hostname>.*):(?<repository>.*).git/.match(url)
-          Github::Repository.new(match["repository"])
+          Github::Repository.new(match['repository'])
         end
       end
 
       def default_branch
-        settings['default_branch']
+        repo['default_branch']
+      end
+
+      def as_json
+        repo.to_hash
+      end
+
+      private
+
+      def repo
+        @repo ||= client.repository(name)
       end
     end
   end

@@ -8,15 +8,19 @@
     <% end %>
     <a href="<%= @job.job_path %>"><%= @job.name %></a>
   </span>
+  <% if @job.pull_request.platform_repo %>
   <ul class="list-icon">
     <li>
       <i class="fa fa-github"></i><span>Repository
       <a href="<%= @job.owner_url %>" target="_blank"><%= @job.owner_name %></a>&nbsp;/
-      <a href="<%= @job.repository_url %>" target="_blank"><%= @job.repository_name %></a></span>
+      <a href="<%= @job.repo_url %>" target="_blank"><%= @job.repo_name %></a></span>
     </li>
-    <li><i class="fa fa-github"></i><span>Branch <%= @job.local_branch_name %></span></li>
+    <li><i class="fa fa-github"></i><span>Branch <%= @job.local_repo_branch %></span></li>
+    <li><i class="fa fa-folder-open"></i><span><%= @job.local_repo_dir %></span></li>
     <li><i class="fa fa-calendar"></i><span><%= @job.created_at %></span></li>
   </ul>
+  <% end %>
+  <% if @job.job_error %>
   <ul class="tabs">
     <li><span>Backtrace</span></li>
   </ul>
@@ -28,4 +32,5 @@
       <% end %>
     </p>
   </div>
+  <% end %>
 </section>

@@ -10,7 +10,7 @@ Dir.glob('lib/**/*.rb').each { |file| require_relative file }
 
 configure do
   set :port, 5000
-  set(:config) { }
+  set(:config) {}
 
   Mongoid.load!('config/mongoid.yml')
   Application.load('config/config.yml')
@@ -22,30 +22,33 @@ helpers do
   end
 end
 
-def github_service
-  @github_service ||= Github::Service.new(settings.config)
+def json_payload(request)
+  JSON.parse(request.body.read)
 end
 
 get '/version' do
   erb :version
 end
 
+post '/api/jobs' do
+  content_type :json
+  status 202
+  job = JobRepository.new.create_pull_request_job(json_payload(request))
+  # Thread.new { PullRequestWorker.new(job).execute }
+  PullRequestWorker.new(job).execute
+  JobsSerializer.new(job).to_json
+end
+
 get '/jobs' do
-  collection = Job.limit(10).to_a
+  collection = JobRepository.new.all
   @jobs = JobDecorator.wrap(collection)
   erb :'jobs/index'
 end
 
 get '/jobs/:id' do |job_id|
-  job = Job.find(job_id)
+  job = JobRepository.new.find(job_id)
   @job = JobDecorator.new(job)
   erb :'jobs/show'
-end
-
-post '/pull_requests' do
-  payload = JSON.parse(request.body.read)
-  service = ScmService.new
-  service.create_pull_request(payload)
 end
 
 post '/hooks' do

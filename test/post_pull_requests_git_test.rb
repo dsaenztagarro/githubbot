@@ -28,14 +28,17 @@ class PostPullRequestsGitTest < Minitest::Test
 
   def teardown
     FileUtils.remove_entry base_dir
+    Mongoid.purge!
   end
 
   def test_post_pull_requests_user
     setup_repo
-    VCR.use_cassette("post_pull_requests_github", record: :new_episodes) do
+    VCR.use_cassette('post_pull_requests_github', record: :new_episodes) do
       data = { target_dir: @repo_url }
-      post '/pull_requests', data.to_json, "CONTENT_TYPE" => "application/json"
-      assert last_response.ok?
+      post '/api/jobs', data.to_json, 'CONTENT_TYPE' => 'application/json'
+      require 'pry'; assert_equal last_response.status, 202
+      sleep(4)
+      require 'pry';      assert_equal last_response.status, 202
     end
   end
 
@@ -55,7 +58,7 @@ class PostPullRequestsGitTest < Minitest::Test
   def setup_repo
     Dir.chdir(@repo_url) do
       `git checkout -b 1-fake-issue`
-      File.open('B.txt', 'w') { |file| file.puts("good bye") }
+      File.open('B.txt', 'w') { |file| file.puts('good bye') }
       `git add B.txt`
       `git commit -m 'This PR implements #1'`
       `git push --set-upstream origin 1-fake-issue`

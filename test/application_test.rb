@@ -19,7 +19,7 @@ class ApplicationTest < Minitest::Test
       Dir.mkdir(path)
       Dir.chdir(path) do
         File.create('A.txt') do |file|
-          file.puts("hello world")
+          file.puts('hello world')
         end
         system("git remote add origin #{remote_path}")
       end
